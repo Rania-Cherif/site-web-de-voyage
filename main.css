@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+body{
+    background-color: #111;
+}
+header{
+    height: 60px;
+    width: 100%;
+    background-color:#222222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    position: fixed;
+    z-index: 1000;
+}
+header>.logo{
+    margin-left: 60px;
+    font-size: 25px;
+}
+header>.menu{
+    display: flex;
+    width: 400px;
+    margin-left: 200px;
+    justify-content: space-between;
+}
+header>.menu>a{
+    color: white;
+    text-decoration: none;
+}
+.buttonreservation1{
+    color: #2ECED4;
+    border: 1px #2ECED4 solid;
+    margin-left: 180px;
+    padding: 7px;
+    width: 190px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+.buttonreservation1:hover{
+    background-color: #2ECED4;
+    color: white;
+}
+.section1{
+    position: relative;
+    width: 100%;
+    height:550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.section1::before{
+    content:"";
+    position:absolute;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-image:url(/images/img1.jpg);
+    filter: brightness(45%);
+}
+.boxtext{
+    position: relative;
+    text-align: center;
+}
+.boxtext>h1{
+    -webkit-text-stroke: white 0.9px;
+    font-size: 35px;
+    color: transparent;
+}
+.boxtext>h2{
+    font-size: 40px;
+    color: white;
+    padding-bottom: 15px;
+}
+.boxtext>p{
+    font-size: 15px;
+    width: 650px;
+    color: white;
+    padding-bottom: 20px;
+}
+.buttonreservation2{
+    
+    color: #2ECED4;
+    border: 1px #2ECED4 solid;
+    padding: 7px;
+    width: 190px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding-left: 19px;
+    padding-right: 19px;
+}
+.buttonreservation2:hover{
+    background-color: #2ECED4;
+    color: white;
+}
+@media (max-width:750px){
+    header>.menu{
+        display: none;
+    }
+    .buttonreservation1{
+        display: none;
+    }
+    .boxtext>h1{
+        font-size: 28px;
+    }
+    .boxtext>h2{
+        font-size: 30px;
+    }
+    .boxtext>p{
+        font-size: 14px;
+        width: 400px;
+
+    }
+    .responsive-menu{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+    }
+    .responsive-menu::after{
+        position: absolute;
+        content: "";
+        height: 3px;
+        background-color: #2ECED4;
+        width: 28px;
+        box-shadow: 0 10px 0 #2ECED4;
+        transform: translateY(-10px);
+        transition: 0.5s;
+    }
+    .responsive-menu.active::after{
+        box-shadow: 0 0 0 #2ECED4;
+        transform: rotate(45deg);
+    }
+    .responsive-menu::before{
+        position: absolute;
+        content: "";
+        height: 3px;
+        background-color: #2ECED4;
+        width: 28px;
+        transform: translateY(10px);
+        transition: 0.5s;
+    }
+    .responsive-menu.active::before{
+        transform: rotate(-45deg);
+    }
+    header .menu.responsive{
+        display: flex;
+        position: absolute;
+        top: 50px;
+        z-index: 1;
+        width: 150px;
+        height: 280px;
+        right: 0;
+        flex-direction: column;
+        background-color: #222222;
+        animation: animate-menu 1s forwards;
+    }
+    header .menu.responsive a{
+        margin:20px;
+        padding-left: 10px;
+    }
+    @keyframes animate-menu{
+        0%{
+            transform:translateY(0);
+        }
+        100%{
+            transform:translateY(50%);
+        }
+    }
+}
+.section2{
+    background-color: #222222;
+    width: 70%;
+    padding: 20px;
+    position: absolute;
+    bottom: 1px;
+    left:170px ;
+
+}
+.section2 form{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding:10px;
+}
+.section2 form div,.section2 form input[type="submit"]{
+    display: flex;
+    flex-direction: column;
+}
+.section2 form div label{
+    margin-bottom: 10px;
+    color: #979494;
+}
+.section2 form input{
+    background-color: #222222;
+    border: solid 1px #2ECED4;
+    padding: 4px;
+    width: 180px;
+}
+.section2 form input[type="submit"]{
+    color: #2ECED4;
+    box-shadow: #2ECED4;
+    cursor: pointer;
+}
+.section2 form input[type="submit"]:hover{
+    box-shadow: 0px 0px 10px #2ECED4;
+}
+@media (max-width:750px){
+    .section2{
+        width: 100%;
+        left: 0;
+        top: 500px;
+        height: 200px;
+    }
+    .section2 form{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .section2 form input{
+        width: 300px;
+    }
+}
+.a-propos{
+    margin-top: 100px;
+    padding: 0 10%;
+    width: 100%;
+    height: 500px;
+}
+.a-propos>h1{
+    color: #2ECED4;
+    font-size: 20px;
+    border-left: solid 4px white;
+    padding: 0 10px;
+    margin-bottom: 90px;
+}
+.left-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+.left{
+    width:1000px;
+    margin-left: 20px;
+    position: relative;
+}
+.left::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: #2ECED4;
+    position: absolute;
+    top: 7px;
+    z-index: -1;
+    right: 10px;
+}
+.left video{
+    width: 100%;
+    box-shadow: 0 0 14px #2ECED4;
+}
+.right>h3{
+    color: white;
+    margin-bottom: 20px;
+}
+.right>p{
+    color: white;
+    font-size: 12px;
+    margin-bottom: 40px;
+}
+.right>a{
+    color: #2ECED4;
+    text-decoration: none;
+    border: #2ECED4 solid 1px;
+    padding: 5px 25px 5px 25px;
+}
+@media (max-width:750px){
+    .a-propos{
+        margin-top: 140px;
+        width: 100%;
+        height: 750PX;
+    }
+    .left-right{
+        display: flex;
+        flex-direction: column;
+    }
+    .left{
+        width:550px;
+    }
+    .right>h3{
+        font-size: 28px;
+    }
+    .right>p{
+        font-size: 17px;
+    }
+}
+.Destinations-Populaires{
+    padding:0 10%;
+    margin-bottom: 50px;
+}
+.Destinations-Populaires>h1{
+    color: #2ECED4;
+    font-size: 20px;
+    border-left: solid 4px white;
+    padding: 0 10px;
+    margin-bottom: 50px;
+}
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.box {
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.box:hover{
+    box-shadow: 0 0 10px #2ECED4;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+.box>.content{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    opacity: 0;
+    align-items: center;
+}
+.box>.content:hover{
+    opacity: 1;
+}
+.box>.content p{
+    font-size: 12px;
+    text-align: center;
+    margin: 10px;
+    padding-bottom: 20px;
+}
+.box>.content h4{
+    text-align: center;
+}
+.box>.content a{
+    color: #2ECED4;
+    text-decoration: none;
+    border: #2ECED4 solid 1px;
+    padding: 5px 40px 5px 40px;
+    margin-left: 80px;
+}
+@media (max-width:750px){
+    .content {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .box>.content p{
+        font-size: 18px;
+    }
+    .box>.content h4{
+        font-size: 25px;
+    }
+    .box>.content a{
+        margin-left: 200px;
+    }
+}
+.Contact{
+    padding:0 10%;
+    margin-bottom: 50px;
+ 
+}
+.Contact>h1{
+    color: #2ECED4;
+    font-size: 20px;
+    border-left: solid 4px white;
+    padding: 0 10px;
+    margin-bottom: 50px;
+}
+.textess{
+    background-color: white;
+}
+.textess >input{
+    background-color: #111;
+    color: white;
+    width: 130px;
+    height: 30px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.textess form{
+    display: flex;
+    height: 400px;
+    gap: 20px;
+}
+form>.lefts{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    
+}
+form>.rights{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+iframe{
+    width: 100%;
+}
+@media (max-width:750px){
+    .textess form{
+        display: flex;
+        height: 400px;
+    }
+    .textess form{
+        gap: 1px;
+    }
+    form>.lefts{
+        padding: 20px 5px 20px 20px;
+    }
+    form>.rights{
+        padding: 20px 20px 20px 5px;
+    }
+}
+footer{
+    background-color:#222222;
+    height: 50px;
+    text-align: center;
+}
+footer>p{
+    color: white;
+    padding-top: 12px;
+}
+span{
+    color: #2ECED4;
+}
+
+
